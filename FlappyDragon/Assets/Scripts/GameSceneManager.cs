@@ -16,6 +16,5 @@ public class GameSceneManager : MonoBehaviour {
 
 	public void QuitGame(){
 		Application.Quit();
-		Debug.Log("Se ha salido del juego");
 	}
 }
