@@ -20,6 +20,12 @@ public class PlayerController : MonoBehaviour {
 		float calculateTime = playerRigidBody2D.velocity.y / rotationSpeedLimit;
 
 		if(Input.GetMouseButtonDown(0)){
+
+			if(!GameManager.Instance.IsGameActive){
+				GameManager.Instance.StartGame();
+				playerRigidBody2D.gravityScale = 1f;
+			}
+
 			playerRigidBody2D.velocity = Vector2.zero;
 			playerRigidBody2D.AddForce(new Vector2(0, upForce));
 		}
@@ -33,8 +39,9 @@ public class PlayerController : MonoBehaviour {
 		playerRigidBody2D.MoveRotation(angle);
 	}
 
-	private void Jump(){
-		
-	}
+private void OnCollisionEnter2D(Collision2D collision) {
+	GameManager.Instance.GameOver();
+}
+
 
 }

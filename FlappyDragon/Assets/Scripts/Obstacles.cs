@@ -5,19 +5,21 @@ using UnityEngine;
 public class Obstacles : MonoBehaviour {
 
 
-	private float obstaclesVelocity = -3f;
+	private float obstaclesVelocity = -4f;
 	private float obstaclesDistance = 11f;
 
 
 	
-	void Update () {
-		
-		transform.position += new Vector3(obstaclesVelocity * Time.deltaTime, 0f, 0f);
+	private void Update () {
 
-		if(transform.position.x < -7f){
-			transform.position = setObstacle();
+		if(GameManager.Instance.IsGameActive){
+			transform.position += new Vector3(obstaclesVelocity * Time.deltaTime, 0f, 0f);
+
+			if(transform.position.x < -7f){
+				transform.position = setObstacle();
+			}
 		}
-	}
+	}	
 
 	private Vector3 setObstacle(){
 		Vector3 temporalPosition = transform.position + (new Vector3(obstaclesDistance,0f,0f));
