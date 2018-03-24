@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 323535525}
   - component: {fileID: 323535527}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +423,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 476776913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1118041003}
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &476776913
@@ -551,7 +562,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 600671545}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1118041003}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &600671545
@@ -661,6 +683,54 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1062672244}
+--- !u!1001 &1118041002
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4177517200156872, guid: 87ecab8276893f844b456dff09096227, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 394.8013
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177517200156872, guid: 87ecab8276893f844b456dff09096227, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 308.84348
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177517200156872, guid: 87ecab8276893f844b456dff09096227, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 34.421642
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177517200156872, guid: 87ecab8276893f844b456dff09096227, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177517200156872, guid: 87ecab8276893f844b456dff09096227, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177517200156872, guid: 87ecab8276893f844b456dff09096227, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177517200156872, guid: 87ecab8276893f844b456dff09096227, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177517200156872, guid: 87ecab8276893f844b456dff09096227, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 87ecab8276893f844b456dff09096227, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &1118041003 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114333704700973120, guid: 87ecab8276893f844b456dff09096227,
+    type: 2}
+  m_PrefabInternal: {fileID: 1118041002}
+  m_Script: {fileID: 11500000, guid: 3a011c579ea805844b3b00dfc78a1ceb, type: 3}
 --- !u!1 &1144468547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1190,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2055735860}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1118041003}
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Settings
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2055735860
