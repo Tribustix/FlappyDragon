@@ -9,25 +9,32 @@ public class PlayerController : MonoBehaviour {
 	private float rotationSpeedLimit = 10f;
 	private float maxAngleToRotate = 30f;
 	private float angle;
-	
+	private Animator anim;
 
 	private void Start () {
 		playerRigidBody2D = GetComponent<Rigidbody2D>();
+		anim = GetComponent<Animator>();
+		anim.SetBool("PlayerMoving", true);
 	}
 	
 	private void Update () {
 		
 		float calculateTime = playerRigidBody2D.velocity.y / rotationSpeedLimit;
 
-		if(Input.GetMouseButtonDown(0)){
+		if(Input.GetMouseButtonDown(0) && !GameManager.Instance.gameOver){
 
 			if(!GameManager.Instance.IsGameActive){
 				GameManager.Instance.StartGame();
 				playerRigidBody2D.gravityScale = 1f;
 			}
 
+			anim.SetBool("PlayerMoving", true);
 			playerRigidBody2D.velocity = Vector2.zero;
 			playerRigidBody2D.AddForce(new Vector2(0, upForce));
+		}
+
+		if(Input.GetMouseButtonUp(0)){
+			anim.SetBool("PlayerMoving", false);
 		}
 
 		if(playerRigidBody2D.velocity.y >=0f){

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 	public Text gameOverScore;
 	private int score = 0;
 	public GameObject panelGameOver;
+	public bool gameOver;
 
     private void Awake(){
 		Instance = this;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour {
 
 	public void GameOver(){
 		isGameActive = false;
+		gameOver = true;
 		panelGameOver.gameObject.SetActive(true);
 		gameOverScore.text = score.ToString();
 		scoreText.gameObject.SetActive(false);
