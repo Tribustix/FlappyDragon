@@ -9,12 +9,16 @@ public class PlayerController : MonoBehaviour {
 	private float rotationSpeedLimit = 10f;
 	private float maxAngleToRotate = 30f;
 	private Animator anim;
+	private Sprite sprite;
 	private float angle;
+	public Sprite greenDragon;
+	public Sprite orangeDragon;
 
 	private void Start () {
 		playerRigidBody2D = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		anim.SetBool("PlayerMoving", true);
+		SetCharacter();
 	}
 	
 	private void Update () {
@@ -60,5 +64,15 @@ private float RecalculateAnglePlayer(float time){
 	}
 }
 
+private void SetCharacter(){
+	if(PlayerPrefs.GetString("Avatar") == "Orange Dragon"){
+			this.GetComponent<SpriteRenderer>().sprite = orangeDragon;
+			anim.SetBool("SpriteDragon", false);
+
+		}else{
+			this.GetComponent<SpriteRenderer>().sprite = greenDragon;
+			anim.SetBool("SpriteDragon", true);
+	}
+}
 
 }
