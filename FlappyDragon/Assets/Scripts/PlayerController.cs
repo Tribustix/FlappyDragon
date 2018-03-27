@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	private float rotationSpeedLimit = 10f;
 	private float maxAngleToRotate = 30f;
 	private Animator anim;
+	private float angle;
 
 	private void Start () {
 		playerRigidBody2D = GetComponent<Rigidbody2D>();
@@ -34,7 +35,8 @@ public class PlayerController : MonoBehaviour {
 			anim.SetBool("PlayerMoving", false);
 		}
 
-		playerRigidBody2D.MoveRotation(RecalculateAnglePlayer(fallTime));
+		angle = RecalculateAnglePlayer(fallTime);
+		playerRigidBody2D.MoveRotation(angle);
 	}
 
 private void OnCollisionEnter2D(Collision2D collision) {
@@ -51,7 +53,6 @@ private void StartGravity(float gravity){
 }
 
 private float RecalculateAnglePlayer(float time){
-	float angle;
 	if(playerRigidBody2D.velocity.y >=0f){
 		return angle = Mathf.Lerp(0, maxAngleToRotate, time);
 	}else{

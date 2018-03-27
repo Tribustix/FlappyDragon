@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject panelGameOver;
 	public bool gameOver;
 	private bool isGameActive;
+	public Sound gameOverSound;
 
     private void Awake(){
 		Instance = this;
@@ -30,15 +31,16 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void GameOver(){
-		isGameActive = false;
-		gameOver = true;
-		ScoreToScoreUI(gameOverScore, score, "Score");
-		ActivateGameOverPanel(true);
-		ShowScore(false);
-		SaveTopScore(score);
-		ScoreToScoreUI(topScore, PlayerPrefs.GetInt("TopScore"), "Top Score");
-
-
+		if(isGameActive == true){
+			isGameActive = false;
+			gameOver = true;
+			ScoreToScoreUI(gameOverScore, score, "Score");
+			ActivateGameOverPanel(true);
+			ShowScore(false);
+			SaveTopScore(score);
+			ScoreToScoreUI(topScore, PlayerPrefs.GetInt("TopScore"), "Top Score");
+			GameOverSound(gameOverSound);
+		}
 	}
 
 	public void AddScore(){
@@ -62,6 +64,10 @@ public class GameManager : MonoBehaviour {
 
 	public void ScoreToScoreUI(Text scoreText, int score, string title){
 		scoreText.text = title+" "+score.ToString();
+	}
+
+	public void GameOverSound(Sound gameOverSound){
+		FxSoundManager.Instance.PlayFxSound(gameOverSound);
 	}
 
 }
