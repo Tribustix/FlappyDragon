@@ -492,7 +492,6 @@ GameObject:
   - component: {fileID: 323535524}
   - component: {fileID: 323535526}
   - component: {fileID: 323535525}
-  - component: {fileID: 323535527}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -550,30 +549,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FLAPPY DRAGON
+  m_Text: OPTIONS
 --- !u!222 &323535526
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 323535523}
---- !u!95 &323535527
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 323535523}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 84dfc05c2d1b28f4c922e79728cbf6cc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &367103703
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +569,7 @@ GameObject:
   - component: {fileID: 367103705}
   - component: {fileID: 367103708}
   m_Layer: 5
-  m_Name: ButtonDeleteScore
+  m_Name: ButtonDeleteData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -607,10 +589,10 @@ RectTransform:
   m_Father: {fileID: 1144468551}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.24875003, y: 0.54789215}
-  m_AnchorMax: {x: 0.74750006, y: 0.61600006}
-  m_AnchoredPosition: {x: 1.5000305, y: -6}
-  m_SizeDelta: {x: 1, y: 6}
+  m_AnchorMin: {x: 0.24875003, y: 0.4485177}
+  m_AnchorMax: {x: 0.74750006, y: 0.51336724}
+  m_AnchoredPosition: {x: 1.5000305, y: 118.079254}
+  m_SizeDelta: {x: 1, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &367103705
 MonoBehaviour:
@@ -652,7 +634,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 660062058}
-        m_MethodName: DeleteScore
+        m_MethodName: DeleteData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -758,9 +740,9 @@ RectTransform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24875003, y: 0.7235686}
-  m_AnchorMax: {x: 0.74750006, y: 0.796487}
-  m_AnchoredPosition: {x: 1.5, y: 0}
-  m_SizeDelta: {x: 1, y: -2}
+  m_AnchorMax: {x: 0.74750006, y: 0.7801859}
+  m_AnchoredPosition: {x: 1.5, y: -9.5}
+  m_SizeDelta: {x: 1, y: 21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &476776912
 MonoBehaviour:
@@ -884,7 +866,7 @@ GameObject:
   - component: {fileID: 660062059}
   - component: {fileID: 660062058}
   m_Layer: 0
-  m_Name: SettingsManager
+  m_Name: OptionsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -898,7 +880,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 660062057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a98c2db3e4b45d4cb286007ba1bbd30, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b5b9ab5f7b77c54d89c2308358a89d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &660062059
@@ -1593,7 +1575,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DELETE SCORE
+  m_Text: DELETE DATA
 --- !u!222 &1660311883
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1856,10 +1838,10 @@ RectTransform:
   m_Father: {fileID: 1144468551}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.24875003, y: 0.6434315}
-  m_AnchorMax: {x: 0.74750006, y: 0.70521575}
-  m_AnchoredPosition: {x: 1.5000153, y: -10}
-  m_SizeDelta: {x: 1, y: 14}
+  m_AnchorMin: {x: 0.24875003, y: 0.54789215}
+  m_AnchorMax: {x: 0.74750006, y: 0.61600006}
+  m_AnchoredPosition: {x: 1.5000153, y: 104.49995}
+  m_SizeDelta: {x: 1, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1890597502
 MonoBehaviour:
@@ -2006,10 +1988,10 @@ RectTransform:
   m_Father: {fileID: 1144468551}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.24875003, y: 0.4444865}
-  m_AnchorMax: {x: 0.74750006, y: 0.51340544}
-  m_AnchoredPosition: {x: 1.5000153, y: -3}
-  m_SizeDelta: {x: 1, y: 4}
+  m_AnchorMin: {x: 0.24875003, y: 0.363}
+  m_AnchorMax: {x: 0.74750006, y: 0.42851773}
+  m_AnchoredPosition: {x: 1.5000153, y: 115}
+  m_SizeDelta: {x: 1, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2055735859
 MonoBehaviour:

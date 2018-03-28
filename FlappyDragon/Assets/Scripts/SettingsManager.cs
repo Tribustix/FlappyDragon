@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SettingsManager : MonoBehaviour {
 
-	public void DeleteScore(){
-		PlayerPrefs.DeleteKey("TopScore");
-	}
-	
+	public static GameObject backgroundMusicObject;
+
+	public void SetVolume(float volume){
+		BackgroundSoundManager.Instance.SetVolume(volume);
+	}	
 }

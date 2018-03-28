@@ -18,7 +18,13 @@ public class PlayerController : MonoBehaviour {
 		playerRigidBody2D = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		anim.SetBool("PlayerMoving", true);
-		SetCharacter();
+
+		if(PlayerPrefs.GetString("Avatar") == null ){
+			SetCharacterDefault();
+		}else{
+		 	SetCharacter();
+		}
+		
 	}
 	
 	private void Update () {
@@ -43,36 +49,41 @@ public class PlayerController : MonoBehaviour {
 		playerRigidBody2D.MoveRotation(angle);
 	}
 
-private void OnCollisionEnter2D(Collision2D collision) {
-	GameManager.Instance.GameOver();
-}
-
-private void PlayerJump(){
-	playerRigidBody2D.velocity = Vector2.zero;
-	playerRigidBody2D.AddForce(new Vector2(0, upForce));
-}
-
-private void StartGravity(float gravity){
-	playerRigidBody2D.gravityScale = gravity;
-}
-
-private float RecalculateAnglePlayer(float time){
-	if(playerRigidBody2D.velocity.y >=0f){
-		return angle = Mathf.Lerp(0, maxAngleToRotate, time);
-	}else{
-		return angle = Mathf.Lerp(0, -maxAngleToRotate, -time);
+	private void OnCollisionEnter2D(Collision2D collision) {
+		GameManager.Instance.GameOver();
 	}
-}
 
-private void SetCharacter(){
-	if(PlayerPrefs.GetString("Avatar") == "Orange Dragon"){
-			this.GetComponent<SpriteRenderer>().sprite = orangeDragon;
-			anim.SetBool("SpriteDragon", false);
+	private void PlayerJump(){
+		playerRigidBody2D.velocity = Vector2.zero;
+		playerRigidBody2D.AddForce(new Vector2(0, upForce));
+	}
 
+	private void StartGravity(float gravity){
+		playerRigidBody2D.gravityScale = gravity;
+	}
+
+	private float RecalculateAnglePlayer(float time){
+		if(playerRigidBody2D.velocity.y >=0f){
+			return angle = Mathf.Lerp(0, maxAngleToRotate, time);
 		}else{
-			this.GetComponent<SpriteRenderer>().sprite = greenDragon;
-			anim.SetBool("SpriteDragon", true);
+			return angle = Mathf.Lerp(0, -maxAngleToRotate, -time);
+		}
 	}
-}
+
+	private void SetCharacter(){
+		if(PlayerPrefs.GetString("Avatar") == "Orange Dragon"){
+				this.GetComponent<SpriteRenderer>().sprite = orangeDragon;
+				anim.SetBool("SpriteDragon", false);
+
+			}else{
+				this.GetComponent<SpriteRenderer>().sprite = greenDragon;
+				anim.SetBool("SpriteDragon", true);
+		}
+	}
+
+	private void SetCharacterDefault(){
+		this.GetComponent<SpriteRenderer>().sprite = greenDragon;
+		anim.SetBool("SpriteDragon", true);
+	}
 
 }

@@ -19,7 +19,7 @@ public class CharacterManager : MonoBehaviour {
 	}
 
 	public void UnlockCharacter(){
-		if(PlayerPrefs.GetInt("TopScore") > reward){
+		if(PlayerPrefs.GetInt("TopScore") >= reward){
 			secretCharacter.gameObject.SetActive(true);
 			questionSign.gameObject.SetActive(false);
 			rewardText.gameObject.SetActive(false);

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class BackgroundSoundManager : MonoBehaviour {
 
@@ -21,6 +21,14 @@ public class BackgroundSoundManager : MonoBehaviour {
 		musicAudioSource.volume = sound.volume;
 		musicAudioSource.loop = sound.loop;
 		musicAudioSource.Play();
+	}
+
+	public void SetVolume(float volume){
+		musicAudioSource.volume = volume;
+	}
+
+	public float GetVolume(){
+		return musicAudioSource.volume;
 	}
 
 	

@@ -1359,7 +1359,7 @@ MonoBehaviour:
   typeofSound: 0
   sound:
     clip: {fileID: 8300000, guid: 860226144f2e2dc41b53dab900751297, type: 3}
-    volume: 0.276
+    volume: 0.3
     loop: 1
 --- !u!4 &1472384213
 Transform:
@@ -1452,7 +1452,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SETTINGS
+  m_Text: OPTIONS
 --- !u!222 &1730356704
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1516,7 +1516,7 @@ GameObject:
   - component: {fileID: 2055735859}
   - component: {fileID: 2055735862}
   m_Layer: 5
-  m_Name: ButtonSettings
+  m_Name: ButtonOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1588,7 +1588,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Settings
+          m_StringArgument: Options
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2055735862}
