@@ -6,7 +6,7 @@ public class Obstacles : MonoBehaviour {
 
 
 	private float obstaclesVelocity = -4f;
-	private float obstaclesDistance = 11f;
+	private float obstaclesDistance = 12f;
 	private float obstaclesDesapearingDistance = -7f;
 
 	private void Update () {
@@ -23,7 +23,7 @@ public class Obstacles : MonoBehaviour {
 
 	private Vector3 ResetObstaclePosition(){
 		Vector3 temporalPosition = transform.position + (new Vector3(obstaclesDistance,0f,0f));
-		temporalPosition.y = Random.Range(4.17f, 8f);
+		temporalPosition.y = Random.Range(4.17f, 7.4f);
 		return temporalPosition;
 	}
 
